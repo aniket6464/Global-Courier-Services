@@ -52,4 +52,4 @@ A user-friendly portal for customers to:
 ---
 ## 🎥 Demonstration
 
-[Click here to watch the demonstration](https://drive.google.com/file/d/14LkhhHVfwojkljkldjfioajkT/view?usp=drive_link](https://drive.google.com/file/d/14LkhhHVfwoyB4NCdAh72Gm9-bOUkiUUT/view?usp=drive_link))
+[Click here to watch the demonstration](https://drive.google.com/file/d/14LkhhHVfwoyB4NCdAh72Gm9-bOUkiUUT/view?usp=drive_link)
