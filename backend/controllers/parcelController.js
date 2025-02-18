@@ -160,7 +160,7 @@ export const updateParcel = async (req, res, next) => {
 
       const parcel = await Parcel.findById(id);
       const lastTrack = parcel.track_status[parcel.track_status.length - 1];
-      const branchIdToCompare = lastTrack.branch_id;  
+      const branchIdToCompare = lastTrack.branch_id;
 
       if (userRole === 'main branch manager' && branchIdToCompare.toString() !== branchId) {
         return res.status(403).json({ message: "You cannot update this parcel now." });

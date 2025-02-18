@@ -55,7 +55,7 @@ const performanceMeasureSchema = new mongoose.Schema({
 const localOfficePerformanceLogSchema = new mongoose.Schema({
     branch_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Branch', // Adjust according to your branch model
+        ref: 'Branch',
         required: true
     },
     performance_measure: {

@@ -68,11 +68,11 @@ const LocalOffice = () => {
   useEffect(() => {
     const fetchFilters = async () => {
       try {
-        const mainBranchResponse = await fetch("/api/branch/main-branch/read?limit=infinite");
+        const mainBranchResponse = await fetch("/api/branch/main-branch/read?limit=100");
         const mainBranchData = await mainBranchResponse.json();
         setMainBranches(mainBranchData.branches);
 
-        const regionalHubResponse = await fetch("/api/branch/regional-hub/read?limit=infinite");
+        const regionalHubResponse = await fetch("/api/branch/regional-hub/read?limit=100");
         const regionalHubData = await regionalHubResponse.json();
         setRegionalHubs(regionalHubData.branches);
       } catch (error) {

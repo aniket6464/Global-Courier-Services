@@ -401,50 +401,6 @@ export const assignDelivery = async (req, res, next) => {
   }
 };
 
-// export const getAssignedDeliveries = async (req, res, next) => {
-//   try {
-//     const { userId } = req;
-//     const { search, deliveryType, limit = 10 } = req.query;
-
-//     // Find delivery personnel and their assigned parcels
-//     const personnel = await DeliveryPersonnel.findById(userId).select('parcels');
-//     if (!personnel) {
-//       return res.status(404).json({ message: "Delivery personnel not found." });
-//     }
-
-//     // Filter parcels to include only those with status "Pending"
-//     const pendingParcels = personnel.parcels.filter(parcel => parcel.status === "pending");
-
-//     // Create query filters for the Parcel collection
-//     const parcelFilter = {
-//       _id: { $in: pendingParcels.map(parcel => parcel.parcel_id) }
-//     };
-
-//     // Apply search filter
-//     if (search) {
-//       parcelFilter.$or = [
-//         { sender_name: { $regex: search, $options: 'i' } },
-//         { recipient_name: { $regex: search, $options: 'i' } },
-//         { recipient_address: { $regex: search, $options: 'i' } }
-//       ];
-//     }
-
-//     // Apply delivery type filter
-//     if (deliveryType) {
-//       parcelFilter.deliveryType = deliveryType;
-//     }
-
-//     // Fetch parcels with specified fields only and apply limit
-//     const parcels = await Parcel.find(parcelFilter)
-//       .select('sender_name sender_contact recipient_name recipient_contact recipient_address status deliveryType')
-//       .limit(parseInt(limit));
-
-//     res.status(200).json(parcels);
-//   } catch (error) {
-//     next(error); // Pass error to the next middleware
-//   }
-// };
-
 export const getAssignedDeliveries = async (req, res, next) => {
   try {
     const { userId } = req;

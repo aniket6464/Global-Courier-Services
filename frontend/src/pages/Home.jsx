@@ -6,7 +6,7 @@ function Home() {
     <div>
       <header className="bg-gray-800 text-white">
   <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-    <Link to="/" className="text-2xl font-bold">Global Courier</Link>
+    <Link to="/" className="text-2xl font-bold">Global Courier Services</Link>
     <nav className="hidden md:flex space-x-6">
       <Link to="/" className="hover:text-yellow-400">Home</Link>
       <Link to="/customer-sign-in" className="hover:text-yellow-400">Track Parcel</Link>

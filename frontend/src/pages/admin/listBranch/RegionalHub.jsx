@@ -66,7 +66,7 @@ const RegionalHub = () => {
   useEffect(() => {
     const fetchFilters = async () => {
       try {
-        const mainBranchResponse = await fetch("/api/branch/main-branch/read?limit=infinite");
+        const mainBranchResponse = await fetch("/api/branch/main-branch/read?limit=100");
         const mainBranchData = await mainBranchResponse.json();
         setMainBranches(mainBranchData.branches);
       } catch (error) {

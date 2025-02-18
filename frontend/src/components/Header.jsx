@@ -69,128 +69,71 @@ const Header = () => {
     };
 
     return (
-        // <header className="bg-gray-900 p-4 flex items-center justify-between">
-        //     {/* System Name / Brand Logo */}
-        //     <div className="flex items-center">
-        //         <a href="/dashboard" className="flex items-center space-x-2">
-        //             <img src="/company-logo.png.webp" alt="Logo" className="h-8 w-8" />
-        //             <span className="text-xl font-bold text-white">Global Courier Services</span>
-        //         </a>
-        //     </div>
-
-        //     {/* Welcome Message */}
-        //     <div className="ml-6 text-white hidden md:block">
-        //         <span className="text-md">Welcome, {currentUser?.name || 'User'}</span>
-        //     </div>
-
-        //     {/* Profile, Dropdown, and System Settings */}
-        //     <div className="ml-auto flex items-center space-x-6">
-        //         {/* Gear Icon for System Settings */}
-        //         <a href="/admin/settings" className="text-white hover:text-gray-300">
-        //             <button className="focus:outline-none transition ease-in-out duration-200 transform hover:scale-110">
-        //                 <FaCog className="h-6 w-6" />
-        //             </button>
-        //         </a>
-
-        //         {/* User Avatar and Dropdown */}
-        //         <div className="relative" id="user-avatar-dropdown">
-        //             <div
-        //                 className="flex items-center cursor-pointer"
-        //                 onClick={toggleDropdown}
-        //             >
-        //                 <span className="ml-2 text-white hidden md:inline-block">
-        //                     {currentUser?.name || '[User Name]'}
-        //                 </span>
-        //                 <FaUser className="ml-2 text-white h-5 w-5" />
-        //             </div>
-
-        //             {/* Dropdown Menu */}
-        //             {dropdownOpen && (
-        //                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
-        //                     <a
-        //                         href={getProfileUrl()}
-        //                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200 ease-in-out"
-        //                     >
-        //                         View Profile
-        //                     </a>
-        //                     <button
-        //                         onClick={handleLogout}
-        //                         className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200 ease-in-out"
-        //                     >
-        //                         Log Out
-        //                     </button>
-        //                 </div>
-        //             )}
-        //         </div>
-        //     </div>
-        // </header>
-
-        <header className="bg-gray-900 p-4 flex items-center justify-between shadow-md">
-  {/* System Name / Brand Logo */}
-  <div className="flex items-center space-x-4">
-    <a href="/dashboard" className="flex items-center space-x-2">
-      <img
-        src="/company-logo.png.webp"
-        alt="Logo"
-        className="h-10 w-10 rounded-full object-cover"
-      />
-      <span className="text-xl font-extrabold text-white tracking-wide">
-        Global Courier Services
-      </span>
-    </a>
-  </div>
-
-  {/* Welcome Message */}
-  <div className="hidden md:block text-white text-lg px-6">
-    <span className="font-semibold">Welcome, {currentUser?.name || "User"}</span>
-  </div>
-
-  {/* Profile, Dropdown, and System Settings */}
-  <div className="ml-auto flex items-center space-x-6">
-    {/* System Settings Icon */}
-    <a
-      href="/admin/settings"
-      className="text-white hover:text-gray-300 transition ease-in-out duration-200 transform hover:scale-110"
-      aria-label="System Settings"
-    >
-      <FaCog className="h-6 w-6" />
-    </a>
-
-    {/* User Avatar and Dropdown */}
-    <div className="relative" id="user-avatar-dropdown">
-      <div
-        className="flex items-center space-x-2 cursor-pointer hover:bg-gray-800 p-2 rounded-lg transition duration-200"
-        onClick={toggleDropdown}
-      >
-        <span className="hidden md:block text-white font-medium">
-          {currentUser?.name || "[User Name]"}
-        </span>
-        <div className="h-8 w-8 bg-gray-700 rounded-full flex items-center justify-center">
-          <FaUser className="text-white h-5 w-5" />
-        </div>
-      </div>
-
-      {/* Dropdown Menu */}
-      {dropdownOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
-          <a
-            href={getProfileUrl()}
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200"
-          >
-            View Profile
+      <header className="bg-gray-900 p-4 flex items-center justify-between shadow-md">
+        {/* System Name / Brand Logo */}
+        <div className="flex items-center space-x-4">
+          <a href="/dashboard" className="flex items-center space-x-2">
+            <img
+              src="/company-logo.png.webp"
+              alt="Logo"
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <span className="text-xl font-extrabold text-white tracking-wide">
+              Global Courier Services
+            </span>
           </a>
-          <button
-            onClick={handleLogout}
-            className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200"
-          >
-            Log Out
-          </button>
         </div>
-      )}
-    </div>
-  </div>
-</header>
 
+        {/* Welcome Message */}
+        <div className="hidden md:block text-white text-lg px-6">
+          <span className="font-semibold">Welcome, {currentUser?.name || "User"}</span>
+        </div>
+
+        {/* Profile, Dropdown, and System Settings */}
+        <div className="ml-auto flex items-center space-x-6">
+          {/* System Settings Icon */}
+          <a
+            href="/admin/settings"
+            className="text-white hover:text-gray-300 transition ease-in-out duration-200 transform hover:scale-110"
+            aria-label="System Settings"
+          >
+            <FaCog className="h-6 w-6" />
+          </a>
+
+          {/* User Avatar and Dropdown */}
+          <div className="relative" id="user-avatar-dropdown">
+            <div
+              className="flex items-center space-x-2 cursor-pointer hover:bg-gray-800 p-2 rounded-lg transition duration-200"
+              onClick={toggleDropdown}
+            >
+              <span className="hidden md:block text-white font-medium">
+                {currentUser?.name || "[User Name]"}
+              </span>
+              <div className="h-8 w-8 bg-gray-700 rounded-full flex items-center justify-center">
+                <FaUser className="text-white h-5 w-5" />
+              </div>
+            </div>
+
+            {/* Dropdown Menu */}
+            {dropdownOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10">
+                <a
+                  href={getProfileUrl()}
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200"
+                >
+                  View Profile
+                </a>
+                <button
+                  onClick={handleLogout}
+                  className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 transition duration-200"
+                >
+                  Log Out
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
     );
 };
 

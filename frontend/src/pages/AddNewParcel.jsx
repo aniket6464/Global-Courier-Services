@@ -16,7 +16,6 @@ function AddNewParcel({ isCustomer }) {
     });    
 
     const [branches, setBranches] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const { currentUser } = useSelector((state) => state.user);
@@ -30,10 +29,8 @@ function AddNewParcel({ isCustomer }) {
                     if (!response.ok) throw new Error('Failed to fetch branches');
                     const data = await response.json();
                     setBranches(data);
-                    setLoading(false);
                 } catch (err) {
                     setError(err.message);
-                    setLoading(false);
                 }
             };
             fetchBranches();

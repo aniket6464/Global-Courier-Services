@@ -193,30 +193,6 @@ export const readComplaint = async (req, res) => {
   }
 };
 
-// export const readFeedback = async (req, res) => {
-//   const { page = 1, limit = 10 } = req.query;
-
-//   try {
-//     // Fetch feedback entries with pagination
-//     const feedbackEntries = await Feedback.find()
-//       .limit(limit * 1)
-//       .skip((page - 1) * limit)
-//       .exec();
-
-//     // Count total feedback entries
-//     const totalCount = await Feedback.countDocuments();
-
-//     return res.status(200).json({
-//       success: true,
-//       feedback: feedbackEntries,
-//       totalPages: Math.ceil(totalCount / limit),
-//       totalCount,
-//     });
-//   } catch (error) {
-//     return res.status(500).json({ success: false, message: `Failed to read feedback: ${error.message}` });
-//   }
-// };
-
 export const readFeedback = async (req, res) => {
   const { page = 1, limit = 10 } = req.query;
 

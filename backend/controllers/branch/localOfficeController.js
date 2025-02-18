@@ -233,51 +233,6 @@ export const changeLocalOfficeManager = async (req, res, next) => {
       next(err);
   }
 };
-
-// export const getLocalOfficePerformance = async (req, res, next) => {
-//     try {
-//         const { sort, limit, page } = req.query;
-//         const pageNumber = parseInt(page) || 1;
-//         const limitNumber = Number(limit) || 10;
-  
-//         // Build the filter for main_branch_id and regional_hub_id based on req.branchId, req.overseeingBranches, and req.regionalHubId
-//         let branchFilter = {};
-//         if (req.branchId) {
-//             branchFilter = { main_branch_id: req.branchId };
-//         } else if (req.overseeingBranches) {
-//             branchFilter = { main_branch_id: { $in: req.overseeingBranches } };
-//         }
-//         if (req.regionalHubId) {
-//             branchFilter.regional_hub_id = req.regionalHubId;
-//         }
-  
-//         // Define sorting options based on query
-//         const sortOptions = {};
-//         if (sort) {
-//           const sortFields = sort.split(',');
-//           sortFields.forEach(field => {
-//               sortOptions[`performance_tracking.${field.replace('-', '')}`] = field.includes('-') ? -1 : 1;
-//           });
-//         }
-  
-//         // Fetch local offices with only office_code and performance_tracking fields
-//         const offices = await LocalOffice.find(branchFilter, 'branch_code performance_tracking')
-//             .sort(sortOptions)
-//             .skip((pageNumber - 1) * limitNumber)
-//             .limit(limitNumber);
-  
-//         const totalCount = await LocalOffice.countDocuments(branchFilter);
-  
-//         res.json({
-//             totalCount,
-//             totalPages: Math.ceil(totalCount / limitNumber),
-//             currentPage: pageNumber,
-//             offices
-//         });
-//     } catch (err) {
-//         next(err);
-//     }
-// };
   
 export const getLocalOfficePerformance = async (req, res, next) => {
     try {

@@ -53,7 +53,7 @@ export const getParcelIdsMiddleware = async (req, res, next) => {
     try {
       const role = req.userRole;
       let parcelIds = [];
-  
+
       switch (role) {
         case 'admin':
           // Admin can access all parcels, so no filtering needed here
@@ -84,7 +84,7 @@ export const getParcelIdsMiddleware = async (req, res, next) => {
           const customer = await Customer.findOne({ _id: req.userId });
           if (customer && customer.order_history) {
             parcelIds = customer.order_history
-              .filter(order => order.status === 'Pending') // Adjust status filter as needed
+              .filter(order => order.status === 'Pending')
               .map(order => order.parcel_id);
           }
           break;
